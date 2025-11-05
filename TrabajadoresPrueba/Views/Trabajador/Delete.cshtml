@@ -1,0 +1,67 @@
+﻿@model TrabajadoresPrueba.Models.Trabajador
+
+@{
+    ViewData["Title"] = "Eliminar Trabajador";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-danger"><i class="bi bi-trash"></i> Eliminar Trabajador</h2>
+    <hr />
+
+    <div class="alert alert-warning" role="alert">
+        <i class="bi bi-exclamation-triangle"></i>
+        ¿Está seguro que desea eliminar este trabajador?
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-3 text-center">
+                    @if (!string.IsNullOrEmpty(Model.Foto))
+                    {
+                        <img src="@Model.Foto" alt="Foto" width="120" height="120" class="rounded-circle border" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Sin foto</span>
+                    }
+                </div>
+                <div class="col-md-9">
+                    <dl class="row">
+                        <dt class="col-sm-4">Nombres:</dt>
+                        <dd class="col-sm-8">@Model.Nombres</dd>
+
+                        <dt class="col-sm-4">Apellidos:</dt>
+                        <dd class="col-sm-8">@Model.Apellidos</dd>
+
+                        <dt class="col-sm-4">Tipo Documento:</dt>
+                        <dd class="col-sm-8">@Model.TipoDocumento</dd>
+
+                        <dt class="col-sm-4">N° Documento:</dt>
+                        <dd class="col-sm-8">@Model.NumeroDocumento</dd>
+
+                        <dt class="col-sm-4">Sexo:</dt>
+                        <dd class="col-sm-8">@Model.Sexo</dd>
+
+                        <dt class="col-sm-4">Fecha Nacimiento:</dt>
+                        <dd class="col-sm-8">@Model.FechaNacimiento.ToString("dd/MM/yyyy")</dd>
+
+                        <dt class="col-sm-4">Dirección:</dt>
+                        <dd class="col-sm-8">@Model.Direccion</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash-fill"></i> Sí, eliminar
+        </button>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Cancelar
+        </a>
+    </form>
+</div>
