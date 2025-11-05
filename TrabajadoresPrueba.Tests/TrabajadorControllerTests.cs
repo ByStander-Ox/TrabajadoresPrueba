@@ -11,6 +11,8 @@ using Xunit;
 
 namespace TrabajadoresPrueba.Tests
 {
+    //dotnet add package Microsoft.EntityFrameworkCore.InMemory
+    //dotnet add package Microsoft.AspNetCore.Mvc
     public class TrabajadorControllerTests
     {
         // 🧱 Crea un contexto EF Core InMemory para pruebas
