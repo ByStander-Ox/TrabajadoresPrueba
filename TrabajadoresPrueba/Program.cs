@@ -1,4 +1,15 @@
+using TrabajadoresPrueba.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+// DbContext
+//Install-Package Microsoft.EntityFrameworkCore.SqlServer
+//Install - Package Microsoft.EntityFrameworkCore.Tools
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Controladores y vistas
+builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
