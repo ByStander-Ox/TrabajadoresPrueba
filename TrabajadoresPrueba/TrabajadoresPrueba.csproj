@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Evidencias_QA\" />
+  </ItemGroup>
+
 </Project>
